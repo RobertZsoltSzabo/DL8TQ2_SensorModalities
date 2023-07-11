@@ -23,12 +23,24 @@ In order to provide the video stream data to the processing computer, we need an
 ## Implementation
 The solution is implemented as a custom scripted module in Slicer. The source code submitted for the assignment is publicly available in this repository. A short video demonstration of the solution is also available [here](https://drive.google.com/file/d/1m9kUvyMkpxUQMSjhG2rLEMWBm1b6h29R/view?usp=sharing).
 
+The physical setup of the solution is visible below. We can see the ultrasound machine connected to a laptop through an Epiphan DVI2USB3.0 video grabber:
+![alt text](https://github.com/RobertZsoltSzabo/DL8TQ2_SensorModalities/blob/main/Documentation/Images/Physical_setup.jpg "Physical implementation")
+
 The module sets up an OpenIGTLink client at startup in the background, which listens to a predefined port on localhost. Then, the module allows to set up and control a PLUS server, which while running, acts as an OpenIGTLink server, sending data to the same predefined port. The full communication chain is implemented as the following:
-IMAGE
-Control of the PLUS server is realized with a simple GUI within Slicer. The GUI offers the following features:
+
+![alt text](https://github.com/RobertZsoltSzabo/DL8TQ2_SensorModalities/blob/main/Documentation/Images/Communication_Diagram.png "Communication architecture")
+
+Control of the PLUS server is realized with a simple GUI within Slicer:
+![alt text](https://github.com/RobertZsoltSzabo/DL8TQ2_SensorModalities/blob/main/Documentation/Images/Slicer_GUI.png "Slicer module GUI")
+
+The GUI offers the following features:
 - **Select PLUS configuration**: The user needs to select a PLUS configuration specific to their connected device. Since the device is the Epiphan video grabber in our project, the solution provides a default configuration file for this device. The configuration file defines the Slicer node name the incoming data will be captured in.
 - **Select PlusServer.exe**: The user can select the PlusServer executable file that they wish to use for running the PLUS server. By default, the solution looks for a PlusServer.exe on the computer and pulls in the first match. The option can still be relevant in case the user has multiple different PLUS builds, but the default should work in most cases. Having PLUS installed is a prerequisite of this tool.
 - **Start / Stop PLUS Server**: A toggle button which starts or kills a background subprocess running the previously selected PlusServer.exe.
 - **Set Views**: A button that displays and centers the incoming data in a Slicer view.
 
 Once running, incoming data can be viewed in Slicer in real time. The default incoming node name is “Image_Reference”:
+![alt text](https://github.com/RobertZsoltSzabo/DL8TQ2_SensorModalities/blob/main/Documentation/Images/displayed_US_image.png "Live ultrasound image displayed in Slicer")
+
+Short video demonstration of the solution working in real time:
+https://drive.google.com/file/d/1m9kUvyMkpxUQMSjhG2rLEMWBm1b6h29R/view?usp=sharing
