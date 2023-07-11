@@ -43,4 +43,4 @@ Once running, incoming data can be viewed in Slicer in real time. The default in
 ![alt text](https://github.com/RobertZsoltSzabo/DL8TQ2_SensorModalities/blob/main/Documentation/Images/displayed_US_image.png "Live ultrasound image displayed in Slicer")
 
 Short video demonstration of the solution working in real time:
-https://drive.google.com/file/d/1m9kUvyMkpxUQMSjhG2rLEMWBm1b6h29R/view?usp=sharing
+https://github.com/RobertZsoltSzabo/DL8TQ2_SensorModalities/blob/main/Documentation/Images/SensorModelities_DEMO.MOV
