@@ -25,7 +25,7 @@ The solution is implemented as a custom scripted module in Slicer. The source co
 
 The module sets up an OpenIGTLink client at startup in the background, which listens to a predefined port on localhost. Then, the module allows to set up and control a PLUS server, which while running, acts as an OpenIGTLink server, sending data to the same predefined port. The full communication chain is implemented as the following:
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Communication architecture")
+![alt text](https://github.com/RobertZsoltSzabo/DL8TQ2_SensorModalities/blob/main/Documentation/Images/Communication_Diagram.png "Communication architecture")
 
 Control of the PLUS server is realized with a simple GUI within Slicer. The GUI offers the following features:
 - **Select PLUS configuration**: The user needs to select a PLUS configuration specific to their connected device. Since the device is the Epiphan video grabber in our project, the solution provides a default configuration file for this device. The configuration file defines the Slicer node name the incoming data will be captured in.
