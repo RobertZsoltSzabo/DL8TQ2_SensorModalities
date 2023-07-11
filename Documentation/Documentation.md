@@ -24,7 +24,9 @@ In order to provide the video stream data to the processing computer, we need an
 The solution is implemented as a custom scripted module in Slicer. The source code submitted for the assignment is publicly available in this repository. A short video demonstration of the solution is also available [here](https://drive.google.com/file/d/1m9kUvyMkpxUQMSjhG2rLEMWBm1b6h29R/view?usp=sharing).
 
 The module sets up an OpenIGTLink client at startup in the background, which listens to a predefined port on localhost. Then, the module allows to set up and control a PLUS server, which while running, acts as an OpenIGTLink server, sending data to the same predefined port. The full communication chain is implemented as the following:
-IMAGE
+
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Communication architecture")
+
 Control of the PLUS server is realized with a simple GUI within Slicer. The GUI offers the following features:
 - **Select PLUS configuration**: The user needs to select a PLUS configuration specific to their connected device. Since the device is the Epiphan video grabber in our project, the solution provides a default configuration file for this device. The configuration file defines the Slicer node name the incoming data will be captured in.
 - **Select PlusServer.exe**: The user can select the PlusServer executable file that they wish to use for running the PLUS server. By default, the solution looks for a PlusServer.exe on the computer and pulls in the first match. The option can still be relevant in case the user has multiple different PLUS builds, but the default should work in most cases. Having PLUS installed is a prerequisite of this tool.
