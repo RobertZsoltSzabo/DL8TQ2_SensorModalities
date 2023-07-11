@@ -21,7 +21,7 @@ In order to provide the video stream data to the processing computer, we need an
 [3D Slicer](https://www.slicer.org/) is a free, open source software for visualization, processing, segmentation, registration, and analysis of medical, biomedical, and other 3D images, and also in image guided therapy. Although using Slicer is not strictly necessary to simply receive and display images, using it allows us to readily perform additional medical image processing tasks using 3D Slicer’s extensive toolkit. Since this is exactly what we want to enable by capturing the video feed, this is a logical extension of this project. Additionally, 3D Slicer also comes with built-in support for OpenIGTLink and PLUS, both of which I will be using during the implementation. 3D Slicer will serve as the GUI for the application, both for visualizing the incoming data and for controlling the application.
 
 ## Implementation
-The solution is implemented as a custom scripted module in Slicer. The source code submitted for the assignment is publicly available in this repository. A short video demonstration of the solution is also available [here](https://drive.google.com/file/d/1m9kUvyMkpxUQMSjhG2rLEMWBm1b6h29R/view?usp=sharing).
+The solution is implemented as a custom scripted module in Slicer. The source code submitted for the assignment is publicly available in this repository.
 
 The physical setup of the solution is visible below. We can see the ultrasound machine connected to a laptop through an Epiphan DVI2USB3.0 video grabber:
 ![alt text](https://github.com/RobertZsoltSzabo/DL8TQ2_SensorModalities/blob/main/Documentation/Images/Physical_setup.jpg "Physical implementation")
@@ -42,7 +42,6 @@ The GUI offers the following features:
 Once running, incoming data can be viewed in Slicer in real time. The default incoming node name is “Image_Reference”:
 ![alt text](https://github.com/RobertZsoltSzabo/DL8TQ2_SensorModalities/blob/main/Documentation/Images/displayed_US_image.png "Live ultrasound image displayed in Slicer")
 
-Short video demonstration of the solution working in real time:
-https://github.com/RobertZsoltSzabo/DL8TQ2_SensorModalities/assets/24976779/6e4b088c-3fc5-4519-9c83-a8368dcad44d
+Short video demonstration of the solution working in real time is available [here](https://drive.google.com/file/d/1m9kUvyMkpxUQMSjhG2rLEMWBm1b6h29R/view?usp=sharing)
 
 
