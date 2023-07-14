@@ -1,8 +1,8 @@
-# DL8TQ2 Sensor Modalities - course work assignment
+# Displaying live medical ultrasound video data in 3D Slicer
 Author: Róbert Zsolt Szabó, Óbuda University (2023)
 
 ## Introduction
-The purpose of the project is to receive and display the live video feed of a medical ultrasound machine in real time on a separate capture computer. This is desirable in cases when we want to record ultrasound images for later processing, or in case we want to perform real time image processing on the live ultrasound feed.
+The purpose of the project is to receive and display the live video feed of a medical ultrasound machine in real time on a separate computer. This is desirable in cases when we want to record ultrasound images for later processing, or in case we want to perform real time image processing on the live ultrasound feed.
 
 ## Proposed solution
 I propose a solution that uses an external video capture card to receive data from the ultrasound machine and send it to the processing computer, then we use 3D Slicer to show the live ultrasound video. The solution should work with any ultrasound machine capable of providing a video output. 
@@ -43,7 +43,7 @@ Once running, incoming data can be viewed in Slicer in real time. The default in
 
 Short video demonstration of the solution working in real time is available [here](https://drive.google.com/file/d/1m9kUvyMkpxUQMSjhG2rLEMWBm1b6h29R/view?usp=sharing)
 
-## Setup
+## How to use
 The following section details how to set up the module for independent use.
 
 ### Prerequisites
@@ -67,3 +67,4 @@ After the module loads, check the following:
 - Make sure the hardware is connected and ready to be used
 
 Once everything is ready, click "Start PLUS Server". In a few moments, your Slicer should be receiving live data. With the default configuration file, the node receiving data is called "Image_Reference" - if you click "Set Views", the red slice view should be set to display this node (note: the "Set Views" button currently only works with the node name "Image_Referene")
+
