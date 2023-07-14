@@ -1,6 +1,5 @@
 # Displaying live medical ultrasound video data in 3D Slicer
-Homework assignment for Sensor Modalities course.
-The solution integrates medical ultrasound machines with 3D Slicer, providing real-time image transfer from the machine to the capture computer.
+Author: Róbert Zsolt Szabó, Óbuda University (2023)
 
 ## Introduction
 The purpose of the project is to receive and display the live video feed of a medical ultrasound machine in real time on a separate computer. This is desirable in cases when we want to record ultrasound images for later processing, or in case we want to perform real time image processing on the live ultrasound feed.
@@ -31,7 +30,7 @@ The module sets up an OpenIGTLink client at startup in the background, which lis
 ![alt text](https://github.com/RobertZsoltSzabo/DL8TQ2_SensorModalities/blob/main/Documentation/Images/Communication_Diagram.png "Communication architecture")
 
 Control of the PLUS server is realized with a simple GUI within Slicer:
-![alt text](https://github.com/RobertZsoltSzabo/DL8TQ2_SensorModalities/blob/main/Documentation/Images/Slicer_GUI.png "Slicer module GUI")
+![alt text](https://github.com/RobertZsoltSzabo/DL8TQ2_SensorModalities/blob/main/Documentation/Images/Slicer_GUI.PNG "Slicer module GUI")
 
 The GUI offers the following features:
 - **Select PLUS configuration**: The user needs to select a PLUS configuration specific to their connected device. Since the device is the Epiphan video grabber in our project, the solution provides a default configuration file for this device. The configuration file defines the Slicer node name the incoming data will be captured in.
@@ -44,4 +43,28 @@ Once running, incoming data can be viewed in Slicer in real time. The default in
 
 Short video demonstration of the solution working in real time is available [here](https://drive.google.com/file/d/1m9kUvyMkpxUQMSjhG2rLEMWBm1b6h29R/view?usp=sharing)
 
+## How to use
+The following section details how to set up the module for independent use.
+
+### Prerequisites
+- 3D Slicer: The solution is implemented as a 3D Slicer module.
+- PLUS Toolkit: The solution launches a PlusServer.exe in the background, which is part of the PLUS toolkit.
+- Hardware: Any PLUS-compatible imaging device to serve as input. In this project, I used an Epiphan DVI2USB3.0 video grabber to capture the video output of a medical ultrasound machine.
+
+### Installation
+The installation is done by adding the module path in Slicer:
+- Go to Edit / Application Settings / Modules
+- find the BLUELungUltrasound.py file in the cloned local repository
+- Drag and drop the file in the "Additional module paths" section
+- Restart Slicer
+
+After restart, the module should be visible under IGT/BLUE Lung Ultrasound
+
+### How to use:
+After the module loads, check the following:
+- PLUS Server Config file: Select the appropriate PLUS config file for the device you are using (IMPORTANT: The communication port needs to be 18944). The default config file included in the repository is for an Epiphan DVI2USB3.0 device.
+- PlusServer.exe: Select the appropriate PlusServer.exe that you want running in the background. By default the solution selects the first available PlusServer.exe on your local computer.
+- Make sure the hardware is connected and ready to be used
+
+Once everything is ready, click "Start PLUS Server". In a few moments, your Slicer should be receiving live data. With the default configuration file, the node receiving data is called "Image_Reference" - if you click "Set Views", the red slice view should be set to display this node (note: the "Set Views" button currently only works with the node name "Image_Referene")
 
