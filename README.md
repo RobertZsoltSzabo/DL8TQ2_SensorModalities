@@ -43,7 +43,7 @@ Once running, incoming data can be viewed in Slicer in real time. The default in
 
 Short video demonstration of the solution working in real time is available [here](https://drive.google.com/file/d/1m9kUvyMkpxUQMSjhG2rLEMWBm1b6h29R/view?usp=sharing)
 
-## How to use
+## Setup
 The following section details how to set up the module for independent use.
 
 ### Prerequisites
